@@ -1,5 +1,5 @@
 {
-  "Name": "bolt/aldehyde",
+  "name": "bolt/aldehyde",
     "description": "",
     "type": "bolt-theme",
     "keywords": ["theme", "foundation", "sass"],
