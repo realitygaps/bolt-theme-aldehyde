@@ -1,0 +1,106 @@
+{% include '_header.twig' %}
+<body class="home blog">
+<div id="parallax-bg"></div>
+  <div id="page" class="hfeed site">
+		
+    {% include '_topbar.twig' %}
+	
+		<div class="slider-wrapper theme-default container"> 
+    	<div class="ribbon"></div>    
+    			<div id="content" class="site-content row">
+		<div class="container col-md-12"> 
+
+	<div id="primary" class="content-area col-md-8">
+		<main id="main" class="site-main" role="main">
+ {% setcontent records = "entries/latest/6" allowpaging %}
+{% for record in records %}
+            <article class="archive">
+
+            	<div class="featured-thumb col-md-12 col-xs-12">
+	
+
+	{% if record.image!="" %}
+                
+                            <img src="{{ record.image|image() }}">
+                
+                {% endif %}
+    		
+
+	
+	</div>
+
+	<div class="article-rest col-md-12">
+                <header class="entry-header">	
+            
+                <h1 class="entry-title"><a href="{{ record.link }}">{{ record.title }}</a></h1>
+
+				<div class="entry-meta">
+			<span class="posted-on"><i class="icon-time"> </i> <a href="{{ record.link }}" rel="bookmark"><time class="entry-date published" datetime="{{ record.values.datepublish }}" title="{{ record.values.datepublish }}">{{ record.values.datepublish|localdate("%A %B %e") }}</time></span> <span class="byline"> <i class="icon-user"> </i> <span class="author vcard"><a class="url fn n" href="">{{record.user.displayname }}</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+					
+		<div class="entry-content">
+
+		
+	
+	        
+                
+                {# display something introduction-like.. #}
+                {% if record.introduction %}
+                    {{ record.introduction }}
+                {% elseif record.teaser %}
+                    {{ record.teaser }}
+                {% else %}
+                    <p>{{ record.excerpt(300) }}</p>
+                {% endif %}
+
+                {# % include '_recordfooter.twig' with {record: record} % #}
+
+            </article>
+
+            <hr>
+
+        {% else %}
+            <article>
+
+
+                {% if search is defined %}
+
+                    <p>
+                        {{ __("No results found for '%search%'. Please try another search.", { '%search%': search|escape }) }}
+                    </p>
+
+                {% else %}
+
+                    <h2>No content found.</h2>
+
+                    <p>
+                        Unfortunately, no content could be found. Try another page, or go to the
+                        <a href="{{ paths.root }}">homepage</a>.
+                    </p>
+
+                {% endif %}
+
+                {#
+                optionally, you can redirect the browser to another page. Just uncomment the next line to do so.
+                {{ redirect('/') }}
+                #}
+
+            </article>
+        {% endfor %}
+
+        {# If there are more records than will fit on one page, the pager is shown. #}
+        {{ pager() }}
+		
+						
+				
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	
+	{% include '_aside.twig' %}
+	
+	</div>
+	</div><!-- #content -->
+{% include '_footer.twig' %}

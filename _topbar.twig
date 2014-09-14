@@ -1,0 +1,62 @@
+<div id="top-bar">
+      <div class="container">
+	
+	<div id="top-search" class="col-md-6">
+	
+	<form method="get" action="/search" id="searchform" enctype="text/plain">
+  		<div class="row collapse">
+    		<div class="large-8 small-9 columns">
+        		<input type="search" value="" placeholder="Search…" name="search">
+        	</div>
+        	<div class="large-4 small-3 columns">
+		     	<button type="submit" class="alert button expand">Search</button>
+		    </div>
+  		</div>
+  </form>
+	
+	
+	<form method="get" action="{{ paths.root }}search" id="searchform" enctype="text/plain" class="row search-form">
+	  <button type="submit" class="btn btn-default search-submit"><i class="icon-search"> </i></button>
+	  <label>
+		  <span class="screen-reader-text">Search for:</span>
+		  <input type="text" class="search-field" placeholder="Search for anything on this site..." value="" name="search">
+	  </label>
+	  </form>
+	</div>
+	<div id="social-icons" class="col-md-6">
+	
+	  {% if theme.facebook %}<a target="_blank" href="http://facebook.com/{{theme.facebook}}" title="Facebook" ><i class="social-icon icon-facebook-sign"></i></a>{% endif %}
+	  {% if theme.twitter %}<a target="_blank" href="http://twitter.com/{{theme.twitter}}" title="Twitter" ><i class="social-icon icon-twitter-sign"></i></a>{% endif %}
+	  {% if theme.gplus %}<a target="_blank" href="http://plus.google.com/{{theme.gplus}}" title="Google Plus" ><i class="social-icon icon-google-plus-sign"></i></a>{% endif %}
+	  {% if theme.rss %}<a target="_blank" href="{{theme.rss}}" title="RSS Feeds" ><i class="social-icon icon-rss-sign"></i></a>{% endif %}
+	  {% if theme.pinterest %}<a target="_blank" href="http://pinterest.com/{{theme.pinterest}}" title="Pinterest" ><i class="social-icon icon-pinterest-sign"></i></a>{% endif %}
+	  {% if theme.instagram %}<a target="_blank" href="http://instagram.com/{{theme.instagram}}" title="Instagram" ><i class="social-icon icon-instagram"></i></a>{% endif %}
+	  {% if theme.linkedin %}<a target="_blank" href="http://linkedin.com/{{theme.linkedin}}" title="LinkedIn" ><i class="social-icon icon-linkedin-sign"></i></a>{% endif %}
+	  {% if theme.youtube %}<a target="_blank" href="http://youtube.com/{{theme.youtube}}" title="YouTube" ><i class="social-icon icon-youtube-sign"></i></a>{% endif %}
+	  {% if theme.tumblr %}<a target="_blank" href="http://{{theme.tumblr}}.tumblr.com" title="Tumblr" ><i class="social-icon icon-tumblr-sign"></i></a>{% endif %}
+	  {% if theme.flickr %}<a target="_blank" href="http://flickr.com/{{theme.flickr}}" title="Flickr" ><i class="social-icon icon-flickr"></i></a>{% endif %}
+	             	                      
+	</div>
+	
+      </div>
+    </div><!--#top-bar-->
+    <header id="masthead" class="site-header row container" role="banner">
+      <div class="site-branding col-md-4">
+			<h1 class="site-title"><a href="{{ paths.root }}" title=" {{ app.config.get('general/sitename') }} 	" rel="home"> {{ app.config.get('general/sitename') }} 	</a></h1> 
+      </div>
+		
+      <div class="default-nav-wrapper col-md-8 col-xs-12"> 	
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+	<div id="nav-container">
+	  <h1 class="menu-toggle"></h1>
+	  <div class="screen-reader-text skip-link"><a href="#content" title="Skip to content">Skip to content</a></div>
+	  <div class="menu-menu-1-container">
+	    <ul id="menu-menu-1" class="menu">
+		  {{ menu('main', '_sub_menu.twig') }}
+    	    </ul>
+	  </div>
+	    
+	</div>  
+	</nav><!-- #site-navigation -->
+      </div>	
+    </header><!-- #masthead -->

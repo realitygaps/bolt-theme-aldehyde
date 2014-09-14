@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">	
+<title>
+ {% if record.title is defined %}{{ record.title|striptags }} | {% endif %}
+      {{ app.config.get('general/sitename') }} 	
+ {% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif %}
+ </title>
+   
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://demo.inkhive.com/aldehyde/xmlrpc.php">
+
+<meta name='robots' content='noindex,follow' />
+<link rel="alternate" type="application/rss+xml" title="Aldehyde &raquo; Feed" href="http://demo.inkhive.com/aldehyde/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Aldehyde &raquo; Comments Feed" href="http://demo.inkhive.com/aldehyde/comments/feed/" />
+<link rel='stylesheet' id='aldehyde-fonts-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A400%2C700%2C600&#038;ver=3.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='aldehyde-basic-style-css'  href='{{ paths.theme }}/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='aldehyde-layout-css'  href='{{ paths.theme }}/css/layouts/content-sidebar.css' type='text/css' media='all' />
+<link rel='stylesheet' id='aldehyde-bootstrap-style-css'  href='{{ paths.theme }}/css/bootstrap.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='aldehyde-main-style-css'  href='{{ paths.theme }}/css/main.css' type='text/css' media='all' />
+<script type='text/javascript' src='{{ paths.theme }}//js/jquery.timeago.js?ver=3.9.2'></script>
+<script type='text/javascript' src='{{ paths.theme }}//js/superfish.js?ver=3.9.2'></script>
+<script type='text/javascript' src='{{ paths.theme }}//js/mm.js?ver=3.9.2'></script>
+<script type='text/javascript' src='{{ paths.theme }}//js/bootstrap.min.js?ver=3.9.2'></script>
+<script type='text/javascript' src='{{ paths.theme }}//js/custom.js?ver=3.9.2'></script>
+<style></style><script>jQuery(window).load(function() { jQuery('#slider').nivoSlider({effect:'boxRainGrow', pauseTime:4000,animSpeed:'500',randomStart:'true'}); });</script><style>#parallax-bg { background: url('{{paths.theme}}/images/cropped-dbg.jpg') center top repeat-x; }</style>	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+</head>
