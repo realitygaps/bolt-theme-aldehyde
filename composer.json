@@ -12,5 +12,11 @@
             "name": "realitygaps",
             "email": "bolt@gapsinreality.com"
         }
-    ]
+    ],
+    "extra": {
+        "bolt-screenshots": [
+            "screenshots/home.png",
+            "screenshots/about.png"
+        ]
+    }
 }
