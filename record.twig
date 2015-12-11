@@ -83,7 +83,7 @@
 
                 {% elseif record.fieldtype(key) not in ['templateselect' ] and value != "" %}
 
-                    <p><strong>{{ record.fieldtype(key) }}: </strong>
+                    <p><strong>{{ key }}: </strong>
                         {{ attribute(record, key) }}
                     </p>
 
