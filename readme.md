@@ -3,6 +3,8 @@ Aldehyde Bolt Theme
 
 This is an adaptation of the aldehyde wordpress theme by Rohit Tripathi and inkhive.com
 
+**Note:**  This is for Bolt 3. Check out the `bolt-v2` branch for a Bolt 2 compatible version.
+
 Under heavy development!
 
 Todo: 
